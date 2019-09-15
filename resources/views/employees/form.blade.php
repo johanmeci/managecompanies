@@ -20,7 +20,7 @@
 <div class="form-group">
     <label class="control-label" for="company">@lang('home_companies.cp_company'):</label>
     <select class="form-control {{ $errors->has('company') ? 'is-invalid' : '' }}" name="company" id="company">
-        @if(isset($companies))
+        @if(isset($companies) && isset($employee))
             @foreach ($companies as $company)
                 @if($company['id'] == $employee->company)
                     <option value="{{$company['id']}}" selected>{{$company['name']}}</option>
@@ -29,6 +29,11 @@
                 @endif
             @endforeach
             <option value="">@lang('home_employees.em_company')</option>
+        @else
+            <option value="">@lang('home_employees.em_company')</option>
+            @foreach ($companies as $company)
+                <option value="{{$company['id']}}">{{$company['name']}}</option>
+            @endforeach
         @endif
     </select>
     {!! $errors->first('company', '<div class="invalid-feedback">:message</div>') !!}
