@@ -16,7 +16,7 @@ class CompaniesController extends Controller
      */
     public function index()
     {
-        $data['companies'] = Companies::paginate(2);
+        $data['companies'] = Companies::paginate(10);
         return view('companies.index', $data)->with('Select', 'active');
     }
 

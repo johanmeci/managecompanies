@@ -30,11 +30,11 @@
             <tr>
                 <td>{{ $loop->iteration }}</td>
                 <td>
-                    <img class="img-thumbnail img-fluid" src="{{ asset('storage').'/'.$company->logo }}" alt="" width="100">
+                    <img class="img-thumbnail img-fluid" src="{{ asset('storage').'/'.$company->logo }}" alt="" width="50">
                 </td>
                 <td>{{ $company->name }}</td>
                 <td><a href="mailto:{{ $company->email }}">{{ $company->email }}</a></td>
-                <td>{{ $company->website }}</td>
+                <td><a href="{{ $company->website }}" target="_blank">{{ $company->website }}</a></td>
                 <td class="d-flex">
                     <a class="btn btn-warning mr-2" href="{{ url('/companies/'.$company->id.'/edit') }}">@lang('home_companies.cp_edit')</a>
                     <form action="{{ url('/companies/'.$company->id) }}" method="post">

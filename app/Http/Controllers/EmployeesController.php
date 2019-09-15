@@ -15,7 +15,7 @@ class EmployeesController extends Controller
      */
     public function index()
     {
-        $data['employees'] = Employees::paginate(2);
+        $data['employees'] = Employees::paginate(10);
         $companies = Companies::all();
         return view('employees.index', $data, compact('companies'));
     }
@@ -95,7 +95,7 @@ class EmployeesController extends Controller
             'last_name'      => 'required|string|max:100',
             'company'      => 'required|integer',
             'email'     => 'required|email',
-            'phone'     => 'required|max:13'
+            'phone'     => 'required|string|max:13|min:8'
         ];
 
         $messages = ['required' => 'The :attribute is required'];
