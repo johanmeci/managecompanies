@@ -7,4 +7,4 @@
 - php artisan db:seed
 
 ## Visit Project
-- http://managecompanies.herokuapp.com/
+- <a href="http://managecompanies.herokuapp.com/" target="_blank">Manage Companies</a>
