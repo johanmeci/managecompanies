@@ -21,19 +21,19 @@
     <label class="control-label" for="company">@lang('home_companies.cp_company'):</label>
     <select class="form-control {{ $errors->has('company') ? 'is-invalid' : '' }}" name="company" id="company">
         @if(isset($companies) && isset($employee))
-            @foreach ($companies as $company)
-                @if($company['id'] == $employee->company)
-                    <option value="{{$company['id']}}" selected>{{$company['name']}}</option>
-                @else
-                    <option value="{{$company['id']}}">{{$company['name']}}</option>
-                @endif
-            @endforeach
-            <option value="">@lang('home_employees.em_company')</option>
+        @foreach ($companies as $company)
+        @if($company['id'] == $employee->company)
+        <option value="{{$company['id']}}" selected>{{$company['name']}}</option>
         @else
-            <option value="">@lang('home_employees.em_company')</option>
-            @foreach ($companies as $company)
-                <option value="{{$company['id']}}">{{$company['name']}}</option>
-            @endforeach
+        <option value="{{$company['id']}}">{{$company['name']}}</option>
+        @endif
+        @endforeach
+        <option value="">@lang('home_employees.em_company')</option>
+        @else
+        <option value="">@lang('home_employees.em_company')</option>
+        @foreach ($companies as $company)
+        <option value="{{$company['id']}}">{{$company['name']}}</option>
+        @endforeach
         @endif
     </select>
     {!! $errors->first('company', '<div class="invalid-feedback">:message</div>') !!}
@@ -49,5 +49,7 @@
     <input class="form-control {{ $errors->has('phone') ? 'is-invalid' : '' }}" type="phone" name="phone" id="phone" value="{{ isset($employee->phone) ? $employee->phone : old('phone') }}">
     {!! $errors->first('phone', '<div class="invalid-feedback">:message</div>') !!}
 </div>
-<input class="btn btn-success" type="submit" value="@if($Modo == 'crear') @lang('home_companies.cp_add') @else @lang('home_companies.cp_edit') @endif">
-<a class="btn btn-primary" href="{{ url('employees') }}">@lang('home_companies.cp_back')</a>
+<div class="div-actions">
+    <input class="btn btn-success" type="submit" value="@if($Modo == 'crear') @lang('home_companies.cp_add') @else @lang('home_companies.cp_edit') @endif">
+    <a class="btn btn-primary" href="{{ url('employees') }}">@lang('home_companies.cp_back')</a>
+</div>

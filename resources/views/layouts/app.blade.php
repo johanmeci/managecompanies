@@ -19,10 +19,11 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/master.css') }}" rel="stylesheet">
 </head>
 
 <body>
-    <div id="app">
+    <div id="app" class="@yield('title')">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -57,34 +58,38 @@
                         </li>
                         @endif
                         @else
-                        <li class="nav-item">
-                            <a class="nav-link" href="http://localhost/manageCompanies/public/locale/en"><img src="{{ asset('img/en.png') }}" alt="English" width="20"></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="http://localhost/manageCompanies/public/locale/es"><img src="{{ asset('img/es.png') }}" alt="Spanish" width="20"></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('companies.index') }}">@lang('home_companies.cp_companies')</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('employees.index') }}">@lang('home_employees.em_employees')</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
-
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
+                        <div class="container-locale">
+                            <li class="nav-item">
+                                <a class="nav-link" href="http://localhost/manageCompanies/public/locale/en"><img src="{{ asset('img/en.png') }}" alt="English" width="20"></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="http://localhost/manageCompanies/public/locale/es"><img src="{{ asset('img/es.png') }}" alt="Spanish" width="20"></a>
+                            </li>
+                        </div>
+                        <div class="container-actions">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('companies.index') }}">@lang('home_companies.cp_companies')</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('employees.index') }}">@lang('home_employees.em_employees')</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    @csrf
-                                </form>
-                            </div>
-                        </li>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        @lang('home.lg_logout')
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        </div>
                         @endguest
                     </ul>
                 </div>

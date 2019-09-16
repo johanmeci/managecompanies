@@ -30,6 +30,7 @@
     <input class="form-control {{ $errors->has('website') ? 'is-invalid' : '' }}" type="url" name="website" id="website" value="{{ isset($company->website) ? $company->website : old('website') }}">
     {!! $errors->first('website', '<div class="invalid-feedback">:message</div>') !!}
 </div>
-
-<input class="btn btn-success" type="submit" value="@if($Modo == 'crear') @lang('home_companies.cp_add') @else @lang('home_companies.cp_edit') @endif">
-<a class="btn btn-primary" href="{{ url('companies') }}">@lang('home_companies.cp_back')</a>
+<div class="div-actions">
+    <input class="btn btn-success" type="submit" value="@if($Modo == 'crear') @lang('home_companies.cp_add') @else @lang('home_companies.cp_edit') @endif">
+    <a class="btn btn-primary" href="{{ url('companies') }}">@lang('home_companies.cp_back')</a>
+</div>

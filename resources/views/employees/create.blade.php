@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container-create">
 
-    <form action="{{url('/employees')}}" method="post">
+    <form class="form-horizontal" action="{{url('/employees')}}" method="post">
         {{ csrf_field() }}
         @include('employees.form', ['Modo' => 'crear'])
     </form>

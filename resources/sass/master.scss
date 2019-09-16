@@ -1,0 +1,249 @@
+// Variables
+@import 'variables';
+
+body {
+    background: $secondary;
+}
+
+.card {
+    border: none;
+    border-radius: 4px;
+}
+
+//Inputs
+input.form-control {
+    border-radius: 0;
+}
+
+//Btn
+.btn {
+    border-radius: 25px;
+    border: none;
+    transition: all .5s ease;
+}
+
+/* Login Page */
+.container-login {
+    margin: .5rem;
+    .card-header {
+        padding: .4rem 1rem;
+        letter-spacing: 2px;
+        color: $secondary;
+        background-color: white;
+        border: none;
+        /* border-bottom: 1px solid $secondary; */
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+    .card-body {
+       color: $secondary;
+       background-color: white;
+        form {
+            .form-group.row {
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+    .btn {
+        padding: .3rem 1.1rem;
+        background-image: linear-gradient(to right, $btn_blue 0%, $btn_blue_dark 100%);
+    }
+    input[type='email'],
+    input[type='password'] {
+        height: 30px;
+        border-radius: 25px;
+        background: $btn_secondary;
+        border:none;
+    }
+}
+@media (min-width: 992px){
+    .container-login {
+        flex: 0 0 40%;
+        max-width: 40%;
+    }
+}
+
+/* Companies Page */
+.container-header {
+    margin-bottom: 1rem !important;
+    .title {
+        color: white;
+        text-transform: uppercase;
+    }
+}
+
+.container-body {
+    overflow-x: scroll;
+    .table {
+        overflow: hidden;
+        border-radius: 5px;
+        th {
+            background: $principal;
+            color: white;
+            border-top: none;
+            font-weight: 300;
+            border-bottom: 1px solid $secondary;
+        }
+    }
+}
+@media (min-width: 992px) {
+    .container-body {
+        overflow: hidden;
+    }
+}
+.pagination {
+    li {
+        &:first-child {
+            margin-left: auto;
+        }
+        &:last-child {
+            margin-right: auto;
+        }
+    }
+}
+@media (min-width: 992px) {
+    .container-header {
+        .title {
+            position: relative;
+            padding-left: .5rem;
+
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 1px;
+                height: 100%;
+                background-color: white;
+            }
+        }
+    }
+}
+
+/* Add Company */
+.container-create,
+.container-edit {
+    color: white;
+    background-color: $principal;
+    margin: 0 .5rem;
+    padding: .5rem;
+    border-radius: 4px;
+    .container-header {
+        text-align: center;
+        border-bottom: 1px solid $secondary;
+    }
+    input,
+    select {
+        border-radius: 25px;
+    }
+    .btn {
+        width: 100%;
+        &.btn-success {
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+@media (min-width: 768px){
+    .container-create,
+    .container-edit {
+        width: 80%;
+        margin: auto;
+        .container-header {
+            .title {
+                &:after {
+                    display: none;
+                }
+            }
+        }
+        .div-actions {
+            display: flex;
+        }
+        .btn {
+            width: auto;
+            margin-top: 1rem !important;
+            &:first-child {
+                margin-left: auto;
+            }
+            &.btn-success {
+                margin-bottom: 0;
+                margin-right: 1rem;
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar-expand-md .navbar-nav .dropdown-menu {
+        top: 0;
+        right: -100%;
+        min-width: 100px;
+    }
+    body {
+        &::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: $secondary;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: $principal;
+            border-radius: 4px;
+        }
+    }
+    #app {
+        display: flex;
+        align-items: flex-start;
+        .navbar {
+            flex: 1 1 20%;
+            height: 100vh;
+            .container {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                #navbarSupportedContent {
+                    flex: inherit;
+                }
+            }
+        }
+        main {
+            flex: 1 1 80%;
+            margin: auto;
+        }
+    }
+    .container-create,
+    .container-edit {
+        width: 50%;
+    }
+
+    /* Companies & Employees*/
+    #app.app-companies,
+    #app.app-employees {
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+        }
+        main {
+            margin-left: 250px;
+            padding-right: .5rem;
+        }
+        #navbarSupportedContent {
+            .navbar-nav.ml-auto {
+                flex-direction: column;
+                .container-locale {
+                    display: flex;
+                }
+                .container-actions {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

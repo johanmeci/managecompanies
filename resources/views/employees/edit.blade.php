@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container-edit">
 
-    <form action="{{ url('/employees/'.$employee->id) }}" method="post">
+    <form class="form-horizontal" action="{{ url('/employees/'.$employee->id) }}" method="post">
         {{ csrf_field() }}
         {{ method_field('PATCH') }}
         @include('employees.form', ['Modo' => 'editar'])

@@ -1,0 +1,278 @@
+body {
+  background: #0d0e19;
+}
+
+.card {
+  border: none;
+  border-radius: 4px;
+}
+
+input.form-control {
+  border-radius: 0;
+}
+
+.btn {
+  border-radius: 25px;
+  border: none;
+  transition: all 0.5s ease;
+}
+
+/* Login Page */
+
+.container-login {
+  margin: 0.5rem;
+}
+
+.container-login .card-header {
+  padding: 0.4rem 1rem;
+  letter-spacing: 2px;
+  color: #0d0e19;
+  background-color: white;
+  border: none;
+  /* border-bottom: 1px solid $secondary; */
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.container-login .card-body {
+  color: #0d0e19;
+  background-color: white;
+}
+
+.container-login .card-body form .form-group.row {
+  display: flex;
+  align-items: center;
+}
+
+.container-login .btn {
+  padding: 0.3rem 1.1rem;
+  background-image: linear-gradient(to right, #64B5F6 0%, #1E88E5 100%);
+}
+
+.container-login input[type=email],
+.container-login input[type=password] {
+  height: 30px;
+  border-radius: 25px;
+  background: #d8dfe5;
+  border: none;
+}
+
+@media (min-width: 992px) {
+  .container-login {
+    flex: 0 0 40%;
+    max-width: 40%;
+  }
+}
+
+/* Companies Page */
+
+.container-header {
+  margin-bottom: 1rem !important;
+}
+
+.container-header .title {
+  color: white;
+  text-transform: uppercase;
+}
+
+.container-body {
+  overflow-x: scroll;
+}
+
+.container-body .table {
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.container-body .table th {
+  background: #1c2033;
+  color: white;
+  border-top: none;
+  font-weight: 300;
+  border-bottom: 1px solid #0d0e19;
+}
+
+@media (min-width: 992px) {
+  .container-body {
+    overflow: hidden;
+  }
+}
+
+.pagination li:first-child {
+  margin-left: auto;
+}
+
+.pagination li:last-child {
+  margin-right: auto;
+}
+
+@media (min-width: 992px) {
+  .container-header .title {
+    position: relative;
+    padding-left: 0.5rem;
+  }
+
+  .container-header .title:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background-color: white;
+  }
+}
+
+/* Add Company */
+
+.container-create,
+.container-edit {
+  color: white;
+  background-color: #1c2033;
+  margin: 0 0.5rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.container-create .container-header,
+.container-edit .container-header {
+  text-align: center;
+  border-bottom: 1px solid #0d0e19;
+}
+
+.container-create input,
+.container-create select,
+.container-edit input,
+.container-edit select {
+  border-radius: 25px;
+}
+
+.container-create .btn,
+.container-edit .btn {
+  width: 100%;
+}
+
+.container-create .btn.btn-success,
+.container-edit .btn.btn-success {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .container-create,
+  .container-edit {
+    width: 80%;
+    margin: auto;
+  }
+
+  .container-create .container-header .title:after,
+  .container-edit .container-header .title:after {
+    display: none;
+  }
+
+  .container-create .div-actions,
+  .container-edit .div-actions {
+    display: flex;
+  }
+
+  .container-create .btn,
+  .container-edit .btn {
+    width: auto;
+    margin-top: 1rem !important;
+  }
+
+  .container-create .btn:first-child,
+  .container-edit .btn:first-child {
+    margin-left: auto;
+  }
+
+  .container-create .btn.btn-success,
+  .container-edit .btn.btn-success {
+    margin-bottom: 0;
+    margin-right: 1rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar-expand-md .navbar-nav .dropdown-menu {
+    top: 0;
+    right: -100%;
+    min-width: 100px;
+  }
+
+  body::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  body::-webkit-scrollbar-track {
+    background: #0d0e19;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background: #1c2033;
+    border-radius: 4px;
+  }
+
+  #app {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  #app .navbar {
+    flex: 1 1 20%;
+    height: 100vh;
+  }
+
+  #app .navbar .container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  #app .navbar .container #navbarSupportedContent {
+    flex: inherit;
+  }
+
+  #app main {
+    flex: 1 1 80%;
+    margin: auto;
+  }
+
+  .container-create,
+  .container-edit {
+    width: 50%;
+  }
+
+  /* Companies & Employees*/
+
+  #app.app-companies .navbar,
+  #app.app-employees .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+  }
+
+  #app.app-companies main,
+  #app.app-employees main {
+    margin-left: 250px;
+    padding-right: 0.5rem;
+  }
+
+  #app.app-companies #navbarSupportedContent .navbar-nav.ml-auto,
+  #app.app-employees #navbarSupportedContent .navbar-nav.ml-auto {
+    flex-direction: column;
+  }
+
+  #app.app-companies #navbarSupportedContent .navbar-nav.ml-auto .container-locale,
+  #app.app-employees #navbarSupportedContent .navbar-nav.ml-auto .container-locale {
+    display: flex;
+  }
+
+  #app.app-companies #navbarSupportedContent .navbar-nav.ml-auto .container-actions,
+  #app.app-employees #navbarSupportedContent .navbar-nav.ml-auto .container-actions {
+    width: 100%;
+  }
+}
+
