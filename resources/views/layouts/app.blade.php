@@ -60,10 +60,10 @@
                         @else
                         <div class="container-locale">
                             <li class="nav-item">
-                                <a class="nav-link" href="http://localhost/manageCompanies/public/locale/en"><img src="{{ asset('img/en.png') }}" alt="English" width="20"></a>
+                                <a class="nav-link" href="{{ url('/') }}/locale/en"><img src="{{ asset('img/en.png') }}" alt="English" width="20"></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="http://localhost/manageCompanies/public/locale/es"><img src="{{ asset('img/es.png') }}" alt="Spanish" width="20"></a>
+                                <a class="nav-link" href="{{ url('/') }}/locale/es"><img src="{{ asset('img/es.png') }}" alt="Spanish" width="20"></a>
                             </li>
                         </div>
                         <div class="container-actions">
