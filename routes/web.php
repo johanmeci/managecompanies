@@ -11,8 +11,12 @@
 |
 */
 
-Route::get('/', 'HomeController@index')->name('home');
-Route::get('/home', 'HomeController@index')->name('home');
+/* Route::get('/', 'HomeController@index')->name('home'); */
+/* Route::get('/home', 'HomeController@index')->name('home'); */
+Route::get('/', function(){
+    return (view('auth.login'));
+});
+Route::get('/home', 'EmployeesController@index')->name('home');
 
 Route::resource('companies', 'CompaniesController')->middleware('auth');
 Route::resource('employees', 'EmployeesController')->middleware('auth');
