@@ -5,3 +5,6 @@
 - Install composer and dependencies
 - php artisan migrate
 - php artisan db:seed
+
+## Visit Project
+- http://managecompanies.herokuapp.com/
